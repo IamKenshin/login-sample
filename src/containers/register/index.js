@@ -64,11 +64,13 @@ class Register extends React.Component {
 
     finalValidationPass() {
         this.setState({
-            touched: {...this.state.touched, ['passConfirm']: true},            
-            errors: {...this.state.errors, ["confirmError"]: (this.state.password !== this.state.passConfirm) ? true: false}
+            touched: {...this.state.touched, ['passConfirm']: true, ['password']: true, ['email']: true},            
+            errors: {...this.state.errors, ["confirmError"]: (this.state.password !== this.state.passConfirm) ? true: false,
+                ["emailError"]: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email) ? false: true,
+                ["passwordError"]: (this.state.password.length < 5 || this.state.password.length > 20) ? true: false}
         }, () => {
             if(!(this.state.errors.confirmError || this.state.errors.emailError || this.state.errors.passwordError)) {
-                this.props.history.push('/login')
+                this.props.history.push('/success')
             }
         })
     }
