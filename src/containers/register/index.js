@@ -103,7 +103,7 @@ class Register extends React.Component {
                     <input className={(this.state.touched.password && this.state.errors.passwordError) ? 'error' : ''} 
                         type="password" placeholder="Password" onBlur={this.validatePassword}/>     
                     
-                    <p className={(this.state.touched.password && this.state.errors.passwordError) ? 'errorMsg' : 'hideError'}>Password must be at least 5 characters'</p>                
+                    <p className={(this.state.touched.password && this.state.errors.passwordError) ? 'errorMsg' : 'hideError'}>Password must be between 5 and 20 characters</p>                
                 </div>
                 
                 <div className={'regInput'}>
