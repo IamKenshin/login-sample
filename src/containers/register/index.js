@@ -78,7 +78,7 @@ class Register extends React.Component {
     render() {
         return (
             <div className={'container'}>
-                <h1>Register</h1>
+                <h1 className={'pageHeading'}>Register</h1>
 
                 <div className={'regInput'}>
                     <label className={'inputLabel'}>First Name</label>
@@ -95,7 +95,7 @@ class Register extends React.Component {
                     <input className={(this.state.touched.email && this.state.errors.emailError) ? 'error' : ''} 
                         type="email" placeholder="Email" onBlur={this.validateEmail}/>
 
-                    <p className={(this.state.touched.email && this.state.errors.emailError) ? 'errorMsg' : 'hideError'}>An email must be in the format of 'john@joe.com'</p>
+                    <span className={(this.state.touched.email && this.state.errors.emailError) ? 'errorMsg' : 'hideError'}>An email must be in the format of 'john@joe.com'</span>
                 </div>
                 
                 <div className={'regInput'}>
@@ -103,7 +103,7 @@ class Register extends React.Component {
                     <input className={(this.state.touched.password && this.state.errors.passwordError) ? 'error' : ''} 
                         type="password" placeholder="Password" onBlur={this.validatePassword}/>     
                     
-                    <p className={(this.state.touched.password && this.state.errors.passwordError) ? 'errorMsg' : 'hideError'}>Password must be between 5 and 20 characters</p>                
+                    <span className={(this.state.touched.password && this.state.errors.passwordError) ? 'errorMsg' : 'hideError'}>Password must be between 5 and 20 characters</span>                
                 </div>
                 
                 <div className={'regInput'}>
@@ -111,10 +111,12 @@ class Register extends React.Component {
                 <input className={(this.state.touched.passConfirm && this.state.errors.confirmError) ? 'error' : ''} 
                     type="password" placeholder="Confirm Password" onBlur={this.handleChange('passConfirm')}/>
                 
-                <p className={(this.state.touched.passConfirm && this.state.errors.confirmError) ? 'errorMsg' : 'hideError'}>Must match password</p>                
+                <span className={(this.state.touched.passConfirm && this.state.errors.confirmError) ? 'errorMsg' : 'hideError'}>Must match password</span>                
                 </div>
                 
-                <button onClick={this.finalValidationPass}>Register</button>                     
+                <div className={'regInput'}>
+                    <div className={'registerButton'} onClick={this.finalValidationPass}>Register</div>                     
+                </div>
             </div>
         )
     }

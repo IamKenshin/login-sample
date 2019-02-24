@@ -6,6 +6,7 @@ import Success from '../success'
 
 const App = () => (
     <div>
+        <h1 className={'topBanner'}>My Top Banner</h1>
         <main>
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
