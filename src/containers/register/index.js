@@ -117,6 +117,9 @@ class Register extends React.Component {
                 <div className={'regInput'}>
                     <div className={'registerButton'} onClick={this.finalValidationPass}>Register</div>                     
                 </div>
+                <div className={'requiredPrompt'}>
+                    <span>Required Fields (*)</span>
+                </div>
             </div>
         )
     }
