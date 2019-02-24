@@ -121,9 +121,11 @@ class Register extends React.Component {
                 <span className={(this.state.touched.passConfirm && this.state.errors.confirmError) ? 'errorMsg' : 'hideError'}>Must match password</span>                
                 </div>
                 
-                <div tabIndex={0}  onKeyPress={this.handleEnter} className={'regInput'}>
+                {/* <div tabIndex={0}  onKeyPress={this.handleEnter} className={'regInput'}>
                     <div className={'registerButton'} onClick={this.finalValidationPass}>Register</div>                     
-                </div>
+                </div> */}
+
+                <button className={'registerButton'} onClick={this.finalValidationPass}>Register</button>
                 <div className={'requiredPrompt'}>
                     <span>Required Fields (*)</span>
                 </div>

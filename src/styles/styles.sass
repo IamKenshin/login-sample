@@ -45,11 +45,19 @@
     background: cadetblue
     color: white
     font-weight: bold
-    width: 100%
+    width: 50%
+    margin: 0 auto
+    display: block
     text-align: center
     cursor: pointer
     &:hover
         background: orange
+    &:focus
+        background: orange
 input
+    display: block
     border: 1px solid rgba(0,0,0,0.1)
     padding: 10px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
